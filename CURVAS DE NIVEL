@@ -1,0 +1,22 @@
+# Curvas de nivel
+$$e^{y}+y*e^{-y}+e^{-y}+2\cos{x} = c$$
+
+
+import numpy as np
+import matplotlib.pyplot as plt 
+plt.style.use(['science', 'notebook', 'grid'])
+
+def f(x,y):
+    return 2*np.cos(x)+np.exp(-y)+np.exp(y)+y*np.exp(-y)
+
+x = np.linspace(-2,2,500)
+y = np.linspace(-2.2,2,500)
+
+C = [-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6]
+
+X,Y = np.meshgrid(x, y)
+cs = plt.contour(X, Y, f(X, Y), C)
+plt.xlabel("$x$", size=18)
+plt.ylabel("y", size=18)
+plt.grid(True)
+#plt.savefig("sol.eps")
