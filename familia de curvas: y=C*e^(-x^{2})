@@ -1,0 +1,14 @@
+import numpy as np
+import matplotlib.pyplot as plt 
+plt.style.use(['science', 'notebook', 'grid'])
+
+x = np.linspace(-3,3,500)
+fig = plt.figure(figsize=(8,6))
+
+for C in range (-4,4,1):
+    y=C*np.exp(-x**2)
+    plt.plot(x,y,label="C=%d"%C)
+    plt.xlim(-3,4)
+    #plt.grid(True)
+    plt.legend(loc=1)
+#plt.savefig("famCurvas.eps")
